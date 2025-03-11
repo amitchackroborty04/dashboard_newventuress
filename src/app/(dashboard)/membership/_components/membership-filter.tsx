@@ -7,7 +7,7 @@ import { ChevronDown } from "lucide-react";
 import { format } from "date-fns";
 import type { DateRange } from "react-day-picker";
 import PacificDropdownSelector from "@/components/ui/PacificDropdownSelector";
-// import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const showList = [
   { id: 1, name: "All", value: "all" },
@@ -20,13 +20,14 @@ const MembershipFilter = ({
   setShowMembership,
   showAdditionalMembership,
   setShowAdditionalMembership,
-  // membershipCategory,
-  // setmembershipCategory,
+  tabValue,
+  setTabValue, 
+ 
 }: any) => {
   const [show, setShow] = useState<string>("all"); // Default to "all"
   const [date, setDate] = useState<DateRange | undefined>();
 
-  // Log date changes
+
   useEffect(() => {
     if (date) {
       console.log("Date Range Changed:", {
@@ -88,12 +89,12 @@ const MembershipFilter = ({
           />
         </div>
       </div>
-      {/* <Tabs defaultValue="membership" className="w-[400px]">
+      <Tabs value={tabValue} onValueChange={setTabValue} className="w-[400px]">
         <TabsList className="grid w-full grid-cols-2">
           <TabsTrigger value="membership">Membership Plans</TabsTrigger>
-          <TabsTrigger value="additonal">Additonal Plans</TabsTrigger>
+          <TabsTrigger value="additional">Additional Plans</TabsTrigger>
         </TabsList>
-      </Tabs> */}
+      </Tabs>
       <div>
         <div className="flex gap-x-[12px]">
           <Button

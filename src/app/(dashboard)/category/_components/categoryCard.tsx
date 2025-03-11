@@ -37,6 +37,7 @@ export function CategoryCard({
   const handleCategoryEditModal = () => setIsOpenEditModal(true);
   // console.log(description);
 
+
   return (
     <div>
       <Card className="hover:shadow-lg duration-500">
@@ -140,5 +141,7 @@ export function CategoryCard({
         </section>
       )}
     </div>
+
+    
   );
 }
